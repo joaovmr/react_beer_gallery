@@ -1,21 +1,21 @@
 import React, { useState, useEffect } from 'react'
 import './App.css';
 import { useFetch } from './components/dataFetch/useFetch';
-import Beer from './components/dataDisplay/Card'
+import Card from './components/dataDisplay/Card'
 
 const url = 'https://api.punkapi.com/v2/beers'
-function App() {
+function Beers() {
   const { products } = useFetch(url)
   console.log(products)
   return (
     <div>
-      <section className='products'>
+      <section className='brejas'>
         {products.map((product:any) => {
-          return <Beer key={product.id} {...product} />
+          return <Card key={product.id} {...product} />
         })}
       </section>
     </div>
   )
 }
 
-export default App;
+export default Beers;

@@ -1,46 +1,53 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react'
 import '../../style/style.css'
+import { useFetch } from '../dataFetch/useFetch';
+
 
 interface Props {
     name:string
     image_url:string
+    food_pairing:string
+    tagline:string
+} 
+
+interface BottomProps{
+  tagline:string
 }
 
-const Beer = ({ image_url, name}:Props) => {
+const FoodList = (food_pairing:string) => {
+  return(
+    <span className = 'conteudo'>
+      <h1>Combines with:</h1>
+      <ul>
+        <li>{food_pairing[0]}</li>
+        <li>{food_pairing[1]}</li>
+        <li>{food_pairing[2]}</li>
+      </ul>
+    </span>
+  )
+}
+
+const Bottom = (tagline:string) => {
+  return (
+    <div className = 'fundo'>
+      {tagline}
+    </div>
+  )
+}
+
+const Card = ({ image_url, name, food_pairing,tagline}:Props) => {
   return (
     <div className = 'breja'>
-        <div className = 'colarinho'></div>
+        <div className = 'colarinho'>
+          <h1>{name}</h1>
+        </div>
         <img src = {image_url} alt = {name}></img>
-        <span className = 'conteudo'></span>
-        <div className = 'fundo'></div>
+        <FoodList {...food_pairing}></FoodList>
+        <div className = 'fundo'>
+          <span className = 'slogan'>{tagline}</span>
+        </div>
     </div>
   );
 };
 
-function append(parent: HTMLElement, el: HTMLElement) {
-    return parent.appendChild(el);
-}
-
-// function montagem(beer:any, div:any){
-//     let btn = document.createElement('button');
-//     btn.id = "add"
-//     btn.innerHTML = `+`
-//     card.img.src = beer.image_url;
-//     card.colarinho.innerHTML = `<h1 class = "title">${breja.nome}</h1>`; 
-//     card.span.innerHTML = `<p class = "middle">Goes with: ${breja.vaiBem}</p><p id = "qtd"></p>`
-//     card.fundo.innerHTML = `<p class = "bottom">
-//     <span class = "slogan">${breja.slogan}</span> 
-//     <span>Preço: $<span id = 'preco'>${breja.preco}</span> </span> 
-//     <span>pH: ${breja.ph}</span> 
-//     <span>Em estoque: ${breja.estoque}</span>
-//     </p>`
-//     append(card.div,btn);
-//     append(card.div, card.colarinho);
-//     append(card.div, card.img);
-//     append(card.div, card.span);
-//     append(card.div, card.fundo);
-//     append(div, card.div);
-// }
-
-
-export default Beer;
+export default Card;

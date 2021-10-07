@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import './App.css';
-import { useFetch } from './components/useFetch';
-import Beer from './components/Beer'
+import { useFetch } from './components/dataFetch/useFetch';
+import Beer from './components/dataDisplay/Card'
 
 const url = 'https://api.punkapi.com/v2/beers'
 function App() {

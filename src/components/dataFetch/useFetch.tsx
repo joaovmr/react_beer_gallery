@@ -1,18 +1,16 @@
 import { useState, useEffect, useCallback } from 'react';
 
 export const useFetch = (url : string) => {
-  const [loading, setLoading] = useState(true);
-  const [products, setProducts] = useState([]);
+  const [beers, setBeers] = useState([]);
 
-  const getProducts = useCallback(async () => {
+  const getBeers = useCallback(async () => {
     const response = await fetch(url);
-    const products = await response.json();
-    setProducts(products);
-    setLoading(false);
+    const beers = await response.json();
+    setBeers(beers);
   }, [url]);
 
   useEffect(() => {
-    getProducts();
-  }, [url, getProducts]);
-  return { loading, products };
+    getBeers();
+  }, [url, getBeers]);
+  return {beers};
 };

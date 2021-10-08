@@ -14,3 +14,5 @@ export class Beer{
       this.estoque = Math.floor(beer.ph * 20);
     }
   }
+
+  export default Beer;

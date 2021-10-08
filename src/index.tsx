@@ -1,12 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import Beers from './Beers';
+import Beers from './components/dataDisplay/Beers';
+import Header from './components/dataDisplay/Header';
+import Modal from './components/dataDisplay/Modal'
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Beers />
+    <Header/>
+    <Beers/>
   </React.StrictMode>,
   document.getElementById('root')
 );

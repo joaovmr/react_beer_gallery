@@ -16,9 +16,11 @@ const Beers: React.FC<IProps> = ({textoInput}) => {
     <div>
       <section className='brejas'>
         {beers.filter((beer:any) => {
+          let beerString = JSON.stringify(beer)
+          console.log(beerString)
           if(textoInput === ''){
             return beer
-          }else if(beer.name.toLowerCase().includes(textoInput.toLowerCase())){
+          }else if(beerString.toLowerCase().includes(textoInput.toLowerCase())){
             return beer
           }
         })

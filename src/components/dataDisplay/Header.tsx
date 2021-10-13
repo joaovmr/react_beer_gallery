@@ -1,8 +1,14 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { FaShoppingCart } from 'react-icons/fa';
 import Modal from './Modal';
+import Filter from './Filter';
 
-const Header = () => {
+interface IProps {
+  textoInput:string;
+  setTextoInput: any;
+}
+
+const Header: React.FC<IProps> = ({textoInput, setTextoInput}) => {
     
     const [isModalVisible, setIsModalVisible] = useState(false);
 
@@ -14,20 +20,8 @@ const Header = () => {
     return (
     <header className = 'header' onClick={() => handlerHeaderClick()}>
         <h1>Beers</h1>
-            <form>
-              <input type="radio" id="padrao" name="escolhas" checked = {true} />
-              <label >Padrão</label> 
-              <input type="radio" id="acid" name="escolhas"/>
-              <label >Cerveja Mais Ácida</label> 
-              <input type="radio" id="lessAcid" name="escolhas"/>
-              <label >Cerveja Menos Ácida</label>
-              <input type="radio" id="expensive" name="escolhas"/>
-              <label >Cerveja Mais Cara</label>
-              <input type="radio" id="cheap" name="escolhas"/>
-              <label >Cerveja Mais Barata</label>
-            </form>
-            <input type="text" id= "search" placeholder="Nome da cerveja"/>
-            
+        <Filter textoInput = {textoInput} 
+            setTextoInput = {setTextoInput}/>
       <div id="total" className="total">Preço Total do estoque: </div>
       <button id="myBtn" className="myBtn" 
       onClick = {() => setIsModalVisible(true)}><FaShoppingCart/></button>

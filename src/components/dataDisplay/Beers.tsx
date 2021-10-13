@@ -1,18 +1,28 @@
 import { useFetch } from '../dataFetch/useFetch';
+import React from 'react';
 import Card from './Beer/Card'
 import '../../style/style.css'
-import background from '../../images/fundo.jpg'
-// import { Beer } from './components/dataBuild/Beer'
+
+interface IProps {
+  textoInput:string;
+}
 
 const url = 'https://api.punkapi.com/v2/beers'
 
-function Beers() {
+const Beers: React.FC<IProps> = ({textoInput}) => {
+  console.log(textoInput)
   const { beers }:any = useFetch(url)
-  console.log(beers)
   return (
     <div>
       <section className='brejas'>
-        {beers.map((beer:any) => {
+        {beers.filter((beer:any) => {
+          if(textoInput === ''){
+            return beer
+          }else if(beer.name.toLowerCase().includes(textoInput.toLowerCase())){
+            return beer
+          }
+        })
+        .map((beer:any) => {
           return <Card key={beer.id} beer = {beer} />
         })}
       </section>

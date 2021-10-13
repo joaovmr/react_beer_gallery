@@ -1,7 +1,6 @@
 const Modal = ({id = 'modal', onClose = () => {},children}:any) => {
     
     const handleOutsideClick = (e:any) => {
-        console.log('aaaa')
         if(e.target.id === id) onClose();
     }
     

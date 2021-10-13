@@ -1,48 +1,42 @@
 import React, { useState, useEffect } from 'react';
 import { FaShoppingCart } from 'react-icons/fa';
-
-const ShowHide = () => {
-  const [show, setShow] = useState(false);
-  return (
-    <>
-      <button className='btn' onClick={() => setShow(!show)}>
-        show/hide
-      </button>
-      {show && <Modal />}
-    </>
-  );
-};
-
-const Modal = () => {
-  return (
-  <div id="myModal" className="modal">
-      <div className="modal-content" id = "modal-content"></div>
-  </div>
-  )
-}
+import Modal from './Modal';
 
 const Header = () => {
+    
+    const [isModalVisible, setIsModalVisible] = useState(false);
+
+    const handlerHeaderClick = () =>{
+      if(isModalVisible === true){
+        setIsModalVisible(false)
+      }
+    }
     return (
-    <header className = 'header'>
+    <header className = 'header' onClick={() => handlerHeaderClick()}>
         <h1>Beers</h1>
             <form>
-              <input type="radio" id="padrao" name="fav_language" checked = {true} />
+              <input type="radio" id="padrao" name="escolhas" checked = {true} />
               <label >Padrão</label> 
-              <input type="radio" id="acid" name="fav_language"/>
+              <input type="radio" id="acid" name="escolhas"/>
               <label >Cerveja Mais Ácida</label> 
-              <input type="radio" id="lessAcid" name="fav_language"/>
+              <input type="radio" id="lessAcid" name="escolhas"/>
               <label >Cerveja Menos Ácida</label>
-              <input type="radio" id="expensive" name="fav_language"/>
+              <input type="radio" id="expensive" name="escolhas"/>
               <label >Cerveja Mais Cara</label>
-              <input type="radio" id="cheap" name="fav_language" placeholder="cheap"/>
+              <input type="radio" id="cheap" name="escolhas"/>
               <label >Cerveja Mais Barata</label>
             </form>
             <input type="text" id= "search" placeholder="Nome da cerveja"/>
-            <div id="myModal" className="modal">
-      <div className="modal-content" id = "modal-content" ></div>
-      </div>
+            
       <div id="total" className="total">Preço Total do estoque: </div>
-      <button id="myBtn" className="myBtn"><FaShoppingCart/></button>
+      <button id="myBtn" className="myBtn" 
+      onClick = {() => setIsModalVisible(true)}><FaShoppingCart/></button>
+
+      {isModalVisible ? 
+        (<Modal onClose = {() => setIsModalVisible(false)}>
+          <h1>AAAAA</h1>
+        </Modal>)
+         : null}
     </header>
     )
 }

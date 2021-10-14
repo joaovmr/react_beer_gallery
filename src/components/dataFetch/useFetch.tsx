@@ -5,7 +5,10 @@ export const useFetch = (url : string) => {
 
   const getBeers = useCallback(async () => {
     const response = await fetch(url);
-    const beers = await response.json();
+    let beers = await response.json();
+    beers = beers.filter((beer:any) =>{
+      return beer.ph > 0 && beer.ph !== null && beer.ibu > 0 && beer.ibu !== null
+    })
     setBeers(beers);
   }, [url]);
 

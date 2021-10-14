@@ -6,9 +6,12 @@ import Filter from './Filter';
 interface IProps {
   textoInput:string;
   setTextoInput: any;
+  checkedButton: string;
+  setCheckedButton:any
 }
 
-const Header: React.FC<IProps> = ({textoInput, setTextoInput}) => {
+const Header: React.FC<IProps> = ({textoInput, 
+  setTextoInput, checkedButton, setCheckedButton}) => {
     
     const [isModalVisible, setIsModalVisible] = useState(false);
 
@@ -21,7 +24,9 @@ const Header: React.FC<IProps> = ({textoInput, setTextoInput}) => {
     <header className = 'header' onClick={() => handlerHeaderClick()}>
         <h1>Beers</h1>
         <Filter textoInput = {textoInput} 
-            setTextoInput = {setTextoInput}/>
+            setTextoInput = {setTextoInput}
+            checkedButton = {checkedButton}
+            setCheckedButton = {setCheckedButton}/>
       <div id="total" className="total">Preço Total do estoque: </div>
       <button id="myBtn" className="myBtn" 
       onClick = {() => setIsModalVisible(true)}><FaShoppingCart/></button>

@@ -1,17 +1,24 @@
 export class Beer{
-    nome:string;
-    vaiBem:string;
-    slogan:string;
+    id:number
+    name:string;
+    food_pairing:string;
+    tagline:string;
     ph:number;
     preco:number;
     estoque:number;
-    constructor(beer:any) {
-      this.nome = beer.name;
-      this.vaiBem = beer.food_pairing;
-      this.slogan = beer.tagline;
-      this.ph = beer.ph;  
-      this.preco = Math.floor((beer.ibu * 30)/2);
-      this.estoque = Math.floor(beer.ph * 20);
+    constructor(id:number,
+      name:string,
+      food_pairing:string,
+      tagline:string,
+      ph:number,
+      ibu:number) {
+      this.id = id
+      this.name = name;
+      this.food_pairing = food_pairing;
+      this.tagline = tagline;
+      this.ph = ph;  
+      this.preco = ibu;
+      this.estoque = ph;
     }
   }
 

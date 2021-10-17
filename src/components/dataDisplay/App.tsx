@@ -11,9 +11,11 @@ const App = () => {
             <Header textoInput = {textoInput} 
             setTextoInput = {setTextoInput}
             checkedButton = {checkedButton}
-            setCheckedButton = {setCheckedButton}/>
+            setCheckedButton = {setCheckedButton}
+            />
             <Beers textoInput = {textoInput}
-            checkedButton = {checkedButton}/>
+            checkedButton = {checkedButton}
+            />
         </>
     )
 }

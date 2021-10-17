@@ -32,8 +32,11 @@ const Header: React.FC<IProps> = ({textoInput,
       onClick = {() => setIsModalVisible(true)}><FaShoppingCart/></button>
 
       {isModalVisible ? 
-        (<Modal onClose = {() => setIsModalVisible(false)}>
-          <h1>AAAAA</h1>
+        (<Modal 
+          onClose = {() => setIsModalVisible(false)}
+          
+        >
+
         </Modal>)
          : null}
     </header>

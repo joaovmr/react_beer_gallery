@@ -1,7 +1,7 @@
 import { useFetch } from '../dataFetch/useFetch';
 import { useDataCleaner } from '../dataTreatment/useDataCleaner';
 import { useDataFilters } from '../dataTreatment/useDataFilters';
-import React from 'react';
+import React, {useState} from 'react';
 import Card from './Beer/Card'
 import '../../style/style.css'
 
@@ -15,7 +15,8 @@ const url = 'https://api.punkapi.com/v2/beers'
 const Beers: React.FC<IProps> = ({textoInput, checkedButton}) => {
   const { loading,beers }:any = useFetch(url)
   const { cleanedBeers } = useDataCleaner(loading, beers)
-  const {maisAcida, menosAcida, maisCara, menosCara} = useDataFilters(loading, beers)
+  const { maisAcida, menosAcida, maisCara, menosCara} = useDataFilters(loading, beers)
+
   if(loading === false){
     switch (checkedButton) {
       case 'acid':

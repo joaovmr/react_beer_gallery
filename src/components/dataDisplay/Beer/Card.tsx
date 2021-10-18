@@ -6,14 +6,15 @@ import Bottom from './Bottom'
 
 interface Beer {
     beer:any
+    isInicial?:boolean
 } 
 
 
-const Card = ({ beer }:Beer) => {
-  
+const Card = ({ beer ,isInicial = true}:Beer) => {
+
   return (
     <div key={beer.id} className = 'breja'>
-        <Button {...beer}></Button>
+        {isInicial ? <Button {...beer}></Button> : null}
         <Top {...beer}></Top>
         <img src = {beer?.image_url} alt = {beer.name}></img>
         <Middle {...beer}></Middle>

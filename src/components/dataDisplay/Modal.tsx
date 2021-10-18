@@ -22,7 +22,7 @@ const Modal = ({onClose = () => {}}:any, {beers}:any) => {
                 {beersCatalog ? 
                 beersCatalog.map((beer:any) => {
                     
-                      return <Card key={beer.id} beer = {beer} />
+                      return <Card key={beer.id} beer = {beer} isInicial = {false}/>
                     
                 }) : <h1>There is no Items in the Cart</h1>}  
             </div>

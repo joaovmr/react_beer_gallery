@@ -10,7 +10,7 @@ interface Beer{
 
 export const ATUALIZAR_BEER = 'catalogo/ATUALIZAR_BEER';
 
-const atualizarBeers = (beer: Beer) => {
+const atualizarBeers = (beer: Beer[]) => {
   return {
     type: ATUALIZAR_BEER,
     payload: beer,

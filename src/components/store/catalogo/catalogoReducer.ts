@@ -12,20 +12,20 @@ interface Beer{
 }
 
 const INITIAL_STATE: IInitalState = {
-  beers: {id:0,name:'a',image_url:null,food_pairing:'a',tagline:'a',ph:0,ibu:0},
+  beers: [],
 };
 
 export interface IInitalState {
-  beers: Beer;
+  beers: Beer[];
 }
 
 export interface TAction {
   type: string;
-  payload: Beer;
+  payload: Beer[]
 }
 
 export interface TCatalogoState {
-  beers: Beer;
+  beers: Beer[];
 }
 
 export default (state: IInitalState = INITIAL_STATE, action: TAction) => {

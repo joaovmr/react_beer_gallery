@@ -15,11 +15,16 @@ const Modal = ({onClose = () => {}}:any, {beers}:any) => {
         if(e.target.id === 'modal') onClose();
     }
     const beersCatalog = useSelector((state: TReducers) => state.catalogo.beers);
-    console.log(beersCatalog)
+    
     return(
         <div id = 'modal' className = "modal" onClick = {handleOutsideClick}>
             <div className = "container"> 
-                {beersCatalog ? <Card key={beersCatalog?.id} beer = {beersCatalog} /> : <h1>AAAAAAAAAAAAA</h1>}  
+                {beersCatalog ? 
+                beersCatalog.map((beer:any) => {
+                    
+                      return <Card key={beer.id} beer = {beer} />
+                    
+                }) : <h1>There is no Items in the Cart</h1>}  
             </div>
         </div>
     )

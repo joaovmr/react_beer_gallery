@@ -1,23 +1,19 @@
 import '../../../style/style.css'
-import Button from './Button'
+import { ICardProps } from '../../dataBuild/Interfaces'
+import AddToCartBottom from './AddToCartBottom'
 import Top from './Top'
 import Middle from './Middle'
 import Bottom from './Bottom'
 
-interface Beer {
-    beer:any
-    isInicial?:boolean
-} 
 
-
-const Card = ({ beer ,isInicial = true}:Beer) => {
+const Card = ({ beer , isInicial = true, isModal = false}:ICardProps) => {
 
   return (
     <div key={beer.id} className = 'breja'>
-        {isInicial ? <Button {...beer}></Button> : null}
+        {isInicial ? <AddToCartBottom {...beer}></AddToCartBottom> : null}
         <Top {...beer}></Top>
         <img src = {beer?.image_url} alt = {beer.name}></img>
-        <Middle {...beer}></Middle>
+        <Middle {...beer} isModal = {isModal}></Middle>
         <Bottom {...beer}></Bottom>
     </div>
   );

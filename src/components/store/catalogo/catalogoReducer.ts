@@ -1,31 +1,22 @@
-
 import { ATUALIZAR_BEER } from './catalogoActions';
+import { IBeer } from "../../dataBuild/Interfaces";
 
-interface Beer{
-    id:number
-    name:string
-    image_url:any
-    food_pairing:string
-    tagline:string
-    ph:number
-    ibu:number
-}
 
 const INITIAL_STATE: IInitalState = {
   beers: [],
 };
 
 export interface IInitalState {
-  beers: Beer[];
+  beers: IBeer[];
 }
 
 export interface TAction {
   type: string;
-  payload: Beer[]
+  payload: IBeer[]
 }
 
 export interface TCatalogoState {
-  beers: Beer[];
+  beers: IBeer[];
 }
 
 export default (state: IInitalState = INITIAL_STATE, action: TAction) => {

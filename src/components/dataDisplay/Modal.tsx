@@ -10,7 +10,7 @@ const mapStateToProps = (state: TReducers) => {
     };
   };
 
-const Modal = ({onClose = () => {}}:any, {beers}:any) => {
+const Modal = ({onClose = () => {}}:any) => {
     const handleOutsideClick = (e:any) => {
         if(e.target.id === 'modal') onClose();
     }
@@ -21,9 +21,7 @@ const Modal = ({onClose = () => {}}:any, {beers}:any) => {
             <div className = "container"> 
                 {beersCatalog ? 
                 beersCatalog.map((beer:any) => {
-                    
-                      return <Card key={beer.id} beer = {beer} isInicial = {false}/>
-                    
+                      return <Card key={beer.id} beer = {beer} isInicial = {false} isModal = {true}/>
                 }) : <h1>There is no Items in the Cart</h1>}  
             </div>
         </div>

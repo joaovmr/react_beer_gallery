@@ -1,8 +1,6 @@
-interface PropsTop{
-    name:string
-  }
+import { TopProps } from "../../dataBuild/Interfaces"
   
-const Top = ({name}:PropsTop) => {
+const Top = ({name}:TopProps) => {
   return (
   <div className = 'colarinho'>
       <h1>{String(name)}</h1>

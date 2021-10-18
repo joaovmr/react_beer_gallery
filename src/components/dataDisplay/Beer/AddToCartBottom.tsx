@@ -13,7 +13,7 @@ interface Beer{
     ibu:number
 }
 
-const Button = ({id,name,image_url,food_pairing,tagline,ph,ibu}:Beer)  => {
+const AddToCartBottom = ({id,name,image_url,food_pairing,tagline,ph,ibu}:Beer)  => {
 
     const dispatch = useDispatch()
     const beer = {
@@ -39,4 +39,4 @@ const Button = ({id,name,image_url,food_pairing,tagline,ph,ibu}:Beer)  => {
     )
 }
 
-export default Button
+export default AddToCartBottom

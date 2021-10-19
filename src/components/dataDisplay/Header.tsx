@@ -18,7 +18,7 @@ const Header = ({textoInput,
     let total = 0
     if(cleanedBeers !== undefined){
       cleanedBeers.forEach((beer:any) => {
-        total += Math.floor((beer.ibu * 30)/2) + Math.floor(beer.ph * 20)
+        total += Math.floor((beer.ibu * 30)/2) * Math.floor(beer.ph * 20)
       });
     }
     return (

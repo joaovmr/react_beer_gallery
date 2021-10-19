@@ -25,10 +25,10 @@ const AddToCartBottom = ({id,name,image_url,food_pairing,tagline,ph,ibu}:IBeerPr
         <>
             <button onClick = {(e:any) => {
                 const isItemInCatalog = beersCatalog.find(el => beer.id === el.id)
-                isItemInCatalog === undefined ? beersCatalog.push(beer) : console.log(beersCatalog)
-                dispatch(atualizarBeers(beersCatalog))
                 totalStock = totalStock + Math.floor((ibu * 30)/2);
-                dispatch(atualizarTotals(totalStock));
+                isItemInCatalog === undefined ? beersCatalog.push(beer) : console.log('')
+                isItemInCatalog === undefined ? dispatch(atualizarTotals(totalStock)) : console.log('')
+                dispatch(atualizarBeers(beersCatalog));
             }}>
                 +
             </button>

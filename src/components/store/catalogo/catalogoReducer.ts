@@ -1,5 +1,5 @@
 import { ATUALIZAR_BEER } from './catalogoActions';
-import { IBeer } from "../../dataBuild/Interfaces";
+import { IBeerProps } from "../../dataBuild/Interfaces";
 
 
 const INITIAL_STATE: IInitalState = {
@@ -7,16 +7,16 @@ const INITIAL_STATE: IInitalState = {
 };
 
 export interface IInitalState {
-  beers: IBeer[];
+  beers: IBeerProps[];
 }
 
 export interface TAction {
   type: string;
-  payload: IBeer[]
+  payload: IBeerProps[]
 }
 
 export interface TCatalogoState {
-  beers: IBeer[];
+  beers: IBeerProps[];
 }
 
 export default (state: IInitalState = INITIAL_STATE, action: TAction) => {

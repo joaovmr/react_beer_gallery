@@ -1,12 +1,12 @@
 import { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { MiddleProps } from '../../dataBuild/Interfaces'
+import { IMiddleProps } from '../../dataBuild/Interfaces'
 import { atualizarBeers } from '../../store/catalogo/catalogoActions'
 import { TReducers } from '../../store/reducers'
 import AddItem from './AddItem'
 import RemoveItem from './RemoveItem'
 
-const Middle = ({id,food_pairing, isModal = false}:MiddleProps) => {
+const Middle = ({id,food_pairing, isModal = false}:IMiddleProps) => {
     const [value,setValue] = useState(1)
     const dispatch = useDispatch()
 

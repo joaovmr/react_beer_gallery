@@ -2,24 +2,13 @@ import React, { useState } from 'react';
 import { FaShoppingCart } from 'react-icons/fa';
 import Modal from './Modal';
 import Filter from './Filter';
+import { IHeaderProps } from '../dataBuild/Interfaces';
 
-interface IProps {
-  textoInput:string;
-  setTextoInput: any;
-  checkedButton: string;
-  setCheckedButton:any
-}
-
-const Header: React.FC<IProps> = ({textoInput, 
-  setTextoInput, checkedButton, setCheckedButton}) => {
+const Header = ({textoInput, 
+  setTextoInput, checkedButton, setCheckedButton} : IHeaderProps) => {
     
     const [isModalVisible, setIsModalVisible] = useState(false);
 
-    const handlerHeaderClick = () =>{
-      if(isModalVisible === true){
-        setIsModalVisible(false)
-      }
-    }
     return (
     <header className = 'header'>
         <h1>Beers</h1>
@@ -27,7 +16,7 @@ const Header: React.FC<IProps> = ({textoInput,
             setTextoInput = {setTextoInput}
             checkedButton = {checkedButton}
             setCheckedButton = {setCheckedButton}/>
-      <div id="total" className="total">Preço Total do estoque: </div>
+      <div id="total" className="total">Total Stock Price: </div>
       <button id="myBtn" className="myBtn" 
       onClick = {() => setIsModalVisible(true)}><FaShoppingCart/></button>
 
@@ -36,7 +25,6 @@ const Header: React.FC<IProps> = ({textoInput,
           onClose = {() => setIsModalVisible(false)}
           
         >
-
         </Modal>)
          : null}
     </header>

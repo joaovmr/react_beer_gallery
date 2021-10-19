@@ -1,11 +1,6 @@
-interface IProps {
-    textoInput:string;
-    setTextoInput: any;
-    checkedButton: string;
-    setCheckedButton:any
-}
+import { IFilterProps } from "../dataBuild/Interfaces"
 
-const Filter: React.FC<IProps> = ({textoInput, setTextoInput,checkedButton, setCheckedButton})=> {
+const Filter = ({textoInput, setTextoInput,checkedButton, setCheckedButton}: IFilterProps)=> {
 
 
     return(

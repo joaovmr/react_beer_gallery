@@ -3,20 +3,15 @@ import { useDataCleaner } from '../dataTreatment/useDataCleaner';
 import { useDataFilters } from '../dataTreatment/useDataFilters';
 import React, {useState} from 'react';
 import Card from './Beer/Card'
+import {IBeersProps} from '../dataBuild/Interfaces'
 import '../../style/style.css'
 
-interface IProps {
-  textoInput:string;
-  checkedButton:String
-}
-
 const url = 'https://api.punkapi.com/v2/beers'
-
-const Beers: React.FC<IProps> = ({textoInput, checkedButton}) => {
+const Beers = ({textoInput, checkedButton}:IBeersProps) => {
   const { loading,beers }:any = useFetch(url)
   const { cleanedBeers } = useDataCleaner(loading, beers)
   const { maisAcida, menosAcida, maisCara, menosCara} = useDataFilters(loading, beers)
-
+  const [totalStock, setTotalStock] = useState(0)
   if(loading === false){
     switch (checkedButton) {
       case 'acid':

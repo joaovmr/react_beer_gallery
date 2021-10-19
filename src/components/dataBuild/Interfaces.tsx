@@ -1,4 +1,4 @@
-export interface IBeer{
+export interface IBeerProps{
   id:number
   name:string
   image_url:any
@@ -8,24 +8,43 @@ export interface IBeer{
   ibu:number
 }
 
+export interface IFilterProps {
+  textoInput:string;
+  setTextoInput: any;
+  checkedButton: string;
+  setCheckedButton:any
+}
+
+export interface IHeaderProps {
+  textoInput:string;
+  setTextoInput: any;
+  checkedButton: string;
+  setCheckedButton:any
+}
+
+export interface IBeersProps {
+  textoInput:string;
+  checkedButton:String
+}
+
 export interface ICardProps {
   beer:any
   isInicial?:boolean
   isModal?:boolean
 } 
 
-export interface MiddleProps{
+export interface IMiddleProps{
   id:number
   food_pairing:string
   isModal?:boolean
 }
 
-export interface BottomProps{
+export interface IBottomProps{
   tagline:string
   ph:number
   ibu:number
 }
 
-export interface TopProps{
+export interface ITopProps{
   name:string
 }

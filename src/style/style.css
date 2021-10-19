@@ -121,6 +121,9 @@ header {
   margin-left: auto;
   margin-right: auto;
 }
+.modal .container .noItems {
+  color: #fff;
+}
 
 .myBtn {
   background-color: black;
@@ -182,6 +185,12 @@ header {
   flex-direction: row;
   justify-content: center;
   margin-bottom: 0.5rem;
+}
+
+.qtd {
+  margin-top: -2rem;
+  margin-bottom: 1rem;
+  text-align: center;
 }
 
 /*# sourceMappingURL=style.css.map */

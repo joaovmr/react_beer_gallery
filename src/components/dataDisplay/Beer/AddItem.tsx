@@ -1,12 +1,11 @@
 import { useState } from "react"
 
-const AddItem = () =>{
+const AddItem = ({value,setValue}:any) =>{
     
-    const [value,setValue] = useState(1)
 
     return (
         <button className = 'btnItem' onClick = {() => setValue(value + 1)}>
-            qtd:{value}
+            +
         </button>
     )
 }

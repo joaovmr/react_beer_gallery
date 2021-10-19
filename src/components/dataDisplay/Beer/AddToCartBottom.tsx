@@ -23,14 +23,15 @@ const AddToCartBottom = ({id,name,image_url,food_pairing,tagline,ph,ibu}:Beer)  
         food_pairing: food_pairing,
         tagline: tagline,
         ph: ph,
-        ibu: ibu
+        ibu: ibu,
+        qtd:1
     }
     const beersCatalog = useSelector((state: TReducers) => state.catalogo.beers);
     return (
         <>
             <button onClick = {(e:any) => {
                 const isItemInCatalog = beersCatalog.find(el => beer.id === el.id)
-                isItemInCatalog === undefined ? beersCatalog.push(beer) : console.log('Item existente')
+                isItemInCatalog === undefined ? beersCatalog.push(beer) : console.log(beersCatalog)
                 dispatch(atualizarBeers(beersCatalog))
             }}>
                 +

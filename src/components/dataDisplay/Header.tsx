@@ -21,7 +21,7 @@ const Header: React.FC<IProps> = ({textoInput,
       }
     }
     return (
-    <header className = 'header' onClick={() => handlerHeaderClick()}>
+    <header className = 'header'>
         <h1>Beers</h1>
         <Filter textoInput = {textoInput} 
             setTextoInput = {setTextoInput}

@@ -15,6 +15,7 @@ export interface ICardProps {
 } 
 
 export interface MiddleProps{
+  id:number
   food_pairing:string
   isModal?:boolean
 }

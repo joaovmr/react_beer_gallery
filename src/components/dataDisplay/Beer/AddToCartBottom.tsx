@@ -1,19 +1,12 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector} from 'react-redux'
+import { IBeerProps } from '../../dataBuild/Interfaces';
 import { atualizarBeers } from '../../store/catalogo/catalogoActions';
 import { TReducers } from '../../store/reducers';
+import { atualizarTotals } from '../../store/total/totalActions';
 
-interface Beer{
-    id:number
-    name:string
-    image_url:any
-    food_pairing:string
-    tagline:string
-    ph:number
-    ibu:number
-}
 
-const AddToCartBottom = ({id,name,image_url,food_pairing,tagline,ph,ibu}:Beer)  => {
+const AddToCartBottom = ({id,name,image_url,food_pairing,tagline,ph,ibu}:IBeerProps)  => {
 
     const dispatch = useDispatch()
     const beer = {
@@ -27,12 +20,15 @@ const AddToCartBottom = ({id,name,image_url,food_pairing,tagline,ph,ibu}:Beer)  
         qtd:1
     }
     const beersCatalog = useSelector((state: TReducers) => state.catalogo.beers);
+    let totalStock:number = useSelector((state: TReducers) => state.total.totals)
     return (
         <>
             <button onClick = {(e:any) => {
                 const isItemInCatalog = beersCatalog.find(el => beer.id === el.id)
                 isItemInCatalog === undefined ? beersCatalog.push(beer) : console.log(beersCatalog)
                 dispatch(atualizarBeers(beersCatalog))
+                totalStock = totalStock + Math.floor((ibu * 30)/2);
+                dispatch(atualizarTotals(totalStock));
             }}>
                 +
             </button>

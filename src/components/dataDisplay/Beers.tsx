@@ -11,7 +11,7 @@ const Beers = ({textoInput, checkedButton}:IBeersProps) => {
   const { loading,beers }:any = useFetch(url)
   const { cleanedBeers } = useDataCleaner(loading, beers)
   const { maisAcida, menosAcida, maisCara, menosCara} = useDataFilters(loading, beers)
-  const [totalStock, setTotalStock] = useState(0)
+
   if(loading === false){
     switch (checkedButton) {
       case 'acid':

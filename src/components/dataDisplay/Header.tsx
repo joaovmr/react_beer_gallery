@@ -8,7 +8,7 @@ const Header = ({textoInput,
   setTextoInput, checkedButton, setCheckedButton} : IHeaderProps) => {
     
     const [isModalVisible, setIsModalVisible] = useState(false);
-
+    const [totalStock, setTotalStock] = useState(0)
     return (
     <header className = 'header'>
         <h1>Beers</h1>
@@ -16,7 +16,7 @@ const Header = ({textoInput,
             setTextoInput = {setTextoInput}
             checkedButton = {checkedButton}
             setCheckedButton = {setCheckedButton}/>
-      <div id="total" className="total">Total Stock Price: </div>
+      <div id="total" className="total">Total Stock Price: {totalStock}</div>
       <button id="myBtn" className="myBtn" 
       onClick = {() => setIsModalVisible(true)}><FaShoppingCart/></button>
 

@@ -6,6 +6,7 @@ export interface IBeerProps{
   tagline:string
   ph:number
   ibu:number
+  qtd:number
 }
 
 export interface IFilterProps {
@@ -36,6 +37,7 @@ export interface ICardProps {
 export interface IMiddleProps{
   id:number
   food_pairing:string
+  ibu:number
   isModal?:boolean
 }
 

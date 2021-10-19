@@ -6,7 +6,7 @@ import { TReducers } from '../../store/reducers'
 import AddItem from './AddItem'
 import RemoveItem from './RemoveItem'
 
-const Middle = ({id,food_pairing, isModal = false}:IMiddleProps) => {
+const Middle = ({id,food_pairing, ibu,isModal = false}:IMiddleProps) => {
     const [value,setValue] = useState(1)
     const dispatch = useDispatch()
 
@@ -33,8 +33,8 @@ const Middle = ({id,food_pairing, isModal = false}:IMiddleProps) => {
           Quantity: {value}
         </p>
         <div className = 'btns'>
-          <AddItem value = {value} setValue = {setValue}></AddItem>
-          <RemoveItem value = {value} setValue = {setValue}></RemoveItem>
+          <AddItem value = {value} setValue = {setValue} ibu = {ibu}></AddItem>
+          <RemoveItem value = {value} setValue = {setValue} ibu = {ibu}></RemoveItem>
         </div> 
       </>
       : null}

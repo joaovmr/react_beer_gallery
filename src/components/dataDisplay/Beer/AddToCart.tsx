@@ -1,4 +1,3 @@
-import React, { useState } from 'react';
 import { useDispatch, useSelector} from 'react-redux'
 import { IBeerProps } from '../../dataBuild/Interfaces';
 import { atualizarBeers } from '../../store/catalogo/catalogoActions';
@@ -6,7 +5,7 @@ import { TReducers } from '../../store/reducers';
 import { atualizarTotals } from '../../store/total/totalActions';
 
 
-const AddToCartBottom = ({id,name,image_url,food_pairing,tagline,ph,ibu}:IBeerProps)  => {
+const AddToCart = ({id,name,image_url,food_pairing,tagline,ph,ibu}:IBeerProps)  => {
 
     const dispatch = useDispatch()
     const beer = {
@@ -23,7 +22,7 @@ const AddToCartBottom = ({id,name,image_url,food_pairing,tagline,ph,ibu}:IBeerPr
     let totalStock:number = useSelector((state: TReducers) => state.total.totals)
     return (
         <>
-            <button onClick = {(e:any) => {
+            <button onClick = {() => {
                 const isItemInCatalog = beersCatalog.find(el => beer.id === el.id)
                 totalStock = totalStock + Math.floor((ibu * 30)/2);
                 isItemInCatalog === undefined ? beersCatalog.push(beer) : console.log('')
@@ -36,4 +35,4 @@ const AddToCartBottom = ({id,name,image_url,food_pairing,tagline,ph,ibu}:IBeerPr
     )
 }
 
-export default AddToCartBottom
+export default AddToCart

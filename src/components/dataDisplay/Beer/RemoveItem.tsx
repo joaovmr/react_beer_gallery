@@ -1,15 +1,17 @@
-import { useState } from "react"
-import { useDispatch, useSelector } from "react-redux"
-import { TReducers } from "../../store/reducers"
+import { useDispatch } from "react-redux"
 import { atualizarTotals } from "../../store/total/totalActions"
 
-const RemoveItem = ({value,setValue,ibu}:any) =>{
+const RemoveItem = ({value,setValue,ibu,selected,totalStock}:any) =>{
     
     const dispatch = useDispatch()
-    let totalStock = useSelector((state: TReducers) => state.total.totals)
     const handleClick = () => {
-        totalStock = totalStock - Math.floor((ibu * 30)/2);
-        dispatch(atualizarTotals(totalStock));
+        console.log('Estado inicial ' + totalStock)
+        totalStock += selected.qtd * (Math.floor((ibu * 30)/2))
+        selected.qtd--
+        console.log('Pos adicao ' + totalStock)
+        totalStock -= (selected.qtd + 2) * (Math.floor((ibu * 30)/2))
+        console.log('Pos subtracao ' + totalStock)
+        dispatch(atualizarTotals(totalStock))
         setValue(value - 1);
     }
 

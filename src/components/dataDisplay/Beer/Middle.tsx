@@ -1,6 +1,6 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { IMiddleProps } from '../../dataBuild/Interfaces'
+import { IBeerProps, IMiddleProps } from '../../dataBuild/Interfaces'
 import { atualizarBeers } from '../../store/catalogo/catalogoActions'
 import { TReducers } from '../../store/reducers'
 import AddItem from './AddItem'
@@ -11,6 +11,15 @@ const Middle = ({id,food_pairing, ibu,isModal = false}:IMiddleProps) => {
     const dispatch = useDispatch()
 
     const beersCatalog = useSelector((state: TReducers) => state.catalogo.beers);
+    const totalStock = useSelector((state: TReducers) => state.total.totals);
+    const selected:any = beersCatalog.find(beer => beer.id === id)
+    
+    useEffect(() => {
+      if(selected !== undefined){
+        setValue(selected.qtd)
+      }
+    },[value]);
+    
     if(value === 0){
       const newBeersCatalog = beersCatalog.filter(function( beer ) {
         return beer.id !== id;
@@ -33,8 +42,18 @@ const Middle = ({id,food_pairing, ibu,isModal = false}:IMiddleProps) => {
           Quantity: {value}
         </p>
         <div className = 'btns'>
-          <AddItem value = {value} setValue = {setValue} ibu = {ibu}></AddItem>
-          <RemoveItem value = {value} setValue = {setValue} ibu = {ibu}></RemoveItem>
+          <AddItem 
+          value = {value} 
+          setValue = {setValue} 
+          ibu = {ibu} 
+          selected = {selected}
+          totalStock = {totalStock}/>
+          <RemoveItem 
+          value = {value} 
+          setValue = {setValue} 
+          ibu = {ibu} 
+          selected = {selected}
+          totalStock = {totalStock}/>
         </div> 
       </>
       : null}

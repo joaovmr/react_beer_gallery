@@ -2,8 +2,6 @@ import Card from "./Beer/Card";
 import { connect } from 'react-redux';
 import { TReducers } from "../store/reducers";
 import { useSelector } from 'react-redux';
-import { useState } from "react";
-
 
 const mapStateToProps = (state: TReducers) => {
     return {
@@ -29,7 +27,7 @@ const Modal = ({onClose = () => {}}:any) => {
                             <Card key={beer.id} beer = {beer} isInicial = {false} isModal = {true}/>
                         </>
                       )
-                }) : <h1 className = 'noItems'>There is no Items in the Cart</h1>}  
+                }) : <h1 className = 'noItems'>There are no Items in the Cart</h1>}  
             </div>
         </div>
     )

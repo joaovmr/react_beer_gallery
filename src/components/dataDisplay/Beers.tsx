@@ -1,7 +1,6 @@
 import { useFetch } from '../dataFetch/useFetch';
 import { useDataCleaner } from '../dataTreatment/useDataCleaner';
 import { useDataFilters } from '../dataTreatment/useDataFilters';
-import React, {useState} from 'react';
 import Card from './Beer/Card'
 import {IBeersProps} from '../dataBuild/Interfaces'
 import '../../style/style.css'
@@ -50,11 +49,12 @@ const Beers = ({textoInput, checkedButton}:IBeersProps) => {
           </div>
         )
     
-      default: return (
+      default: 
+      return (
         <div>
           <section className='brejas'>
             {cleanedBeers
-            .filter((beer:any) => {
+            .filter((beer:object) => {
     
               let beerString = JSON.stringify(beer)
               if(textoInput === ''){
@@ -64,11 +64,8 @@ const Beers = ({textoInput, checkedButton}:IBeersProps) => {
               }
             })
             .map((beer:any) => {
-              if(checkedButton === 'padrao' || checkedButton === ''){
-                return <Card key={beer.id} beer = {beer} />
-              }
-            })}
-            
+              return <Card key={beer.id} beer = {beer} />
+            })} 
           </section>
         </div>
       )   

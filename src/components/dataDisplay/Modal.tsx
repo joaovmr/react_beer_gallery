@@ -2,6 +2,8 @@ import Card from "./Beer/Card";
 import { connect } from 'react-redux';
 import { TReducers } from "../store/reducers";
 import { useSelector } from 'react-redux';
+import { useHistory } from 'react-router-dom';
+
 
 const mapStateToProps = (state: TReducers) => {
     return {
@@ -10,6 +12,7 @@ const mapStateToProps = (state: TReducers) => {
   };
 
 const Modal = ({onClose = () => {}}:any) => {
+    const history = useHistory();
     const totalStock = useSelector((state: TReducers) => state.total.totals)
     const handleOutsideClick = (e:any) => {
         if(e.target.id === 'modal') onClose();
@@ -19,7 +22,12 @@ const Modal = ({onClose = () => {}}:any) => {
     return(
         <div id = 'modal' className = "modal" onClick = {handleOutsideClick}>
             <div className = "container"> 
-                {beersCatalog.length !== 0 ? <h1 className = 'precoCarrinho'>Total Price of the cart: ${totalStock}</h1> : null }
+                {beersCatalog.length !== 0 ? 
+                <div className = 'precoCarrinho'>
+                    <h1>Total Price of the cart: ${totalStock}</h1>
+                    <button onClick={()=> history.push("/checkout")}>Checkout</button>
+                </div>
+                 : null }
                 {beersCatalog.length !== 0 ?
                 beersCatalog.map((beer:any) => {
                       return (

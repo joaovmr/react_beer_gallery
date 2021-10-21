@@ -1,7 +1,6 @@
-import { useEffect, useState } from "react"
-import { useDispatch, useSelector } from "react-redux"
-import { TReducers } from "../../store/reducers"
-import { atualizarTotals } from "../../store/total/totalActions"
+
+import { useDispatch } from "react-redux"
+import { atualizarTotals } from "../../../store/total/totalActions"
 
 const AddItem = ({value,setValue,ibu,selected,totalStock}:any) =>{
 

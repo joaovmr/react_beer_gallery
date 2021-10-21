@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { IBeerProps, IMiddleProps } from '../../dataBuild/Interfaces'
-import { atualizarBeers } from '../../store/catalogo/catalogoActions'
-import { TReducers } from '../../store/reducers'
+import { IMiddleProps } from '../../../dataBuild/Interfaces'
+import { atualizarBeers } from '../../../store/catalogo/catalogoActions'
+import { TReducers } from '../../../store/reducers'
 import AddItem from './AddItem'
 import RemoveItem from './RemoveItem'
 

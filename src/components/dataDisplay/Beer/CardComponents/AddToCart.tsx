@@ -1,8 +1,9 @@
 import { useDispatch, useSelector} from 'react-redux'
-import { IBeerProps } from '../../dataBuild/Interfaces';
-import { atualizarBeers } from '../../store/catalogo/catalogoActions';
-import { TReducers } from '../../store/reducers';
-import { atualizarTotals } from '../../store/total/totalActions';
+import { IBeerProps } from '../../../dataBuild/Interfaces';
+import { atualizarBeers } from '../../../store/catalogo/catalogoActions';
+import { TReducers } from '../../../store/reducers';
+import { atualizarTotals } from '../../../store/total/totalActions';
+
 
 
 const AddToCart = ({id,name,image_url,food_pairing,tagline,ph,ibu}:IBeerProps)  => {

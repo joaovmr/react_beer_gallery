@@ -1,5 +1,5 @@
 import { useDispatch } from "react-redux"
-import { atualizarTotals } from "../../store/total/totalActions"
+import { atualizarTotals } from "../../../store/total/totalActions"
 
 const RemoveItem = ({value,setValue,ibu,selected,totalStock}:any) =>{
     

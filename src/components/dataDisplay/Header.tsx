@@ -12,7 +12,6 @@ const Header = ({textoInput,
   setTextoInput, checkedButton, setCheckedButton} : IHeaderProps) => {
     
     const [isModalVisible, setIsModalVisible] = useState(false);
-    const [totalStock, setTotalStock] = useState(0)
     const { loading,beers }:any = useFetch(url)
     const { cleanedBeers } = useDataCleaner(loading, beers)
     let total = 0

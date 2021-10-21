@@ -1,4 +1,5 @@
-import { IBottomProps } from "../../dataBuild/Interfaces";
+import { IBottomProps } from "../../../dataBuild/Interfaces";
+
 
 const Bottom = ({tagline,ph,ibu}:IBottomProps) => {
     const preco = Math.floor((ibu * 30)/2);

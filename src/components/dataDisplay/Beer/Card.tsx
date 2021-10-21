@@ -1,9 +1,10 @@
 import '../../../style/style.css'
 import { ICardProps } from '../../dataBuild/Interfaces'
-import AddToCart from './AddToCart'
-import Top from './Top'
-import Middle from './Middle'
-import Bottom from './Bottom'
+import AddToCart from './CardComponents/AddToCart';
+import Bottom from './CardComponents/Bottom';
+import Middle from './CardComponents/Middle';
+import Top from './CardComponents/Top';
+
 
 
 const Card = ({ beer , isInicial = true, isModal = false}:ICardProps) => {

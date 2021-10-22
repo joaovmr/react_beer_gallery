@@ -13,7 +13,7 @@ const Card = ({ beer , isInicial = true, isModal = false}:ICardProps) => {
     <div key={beer.id} className = 'breja'>
         {isInicial ? <AddToCart {...beer}></AddToCart> : null}
         <Top {...beer}></Top>
-        <img src = {beer?.image_url} alt = {beer.name}></img>
+        <img src = {beer?.image_url}></img>
         <Middle {...beer} isModal = {isModal}></Middle>
         <Bottom {...beer}></Bottom>
     </div>

@@ -25,7 +25,7 @@ const Modal = ({onClose = () => {}}:any) => {
                 {beersCatalog.length !== 0 ? 
                 <div className = 'precoCarrinho'>
                     <h1>Total Price of the cart: ${totalStock}</h1>
-                    <button onClick={()=> history.push("/checkout")}>Checkout</button>
+                    <button onClick={()=> history.push("/checkout")}>Buy</button>
                 </div>
                  : null }
                 {beersCatalog.length !== 0 ?

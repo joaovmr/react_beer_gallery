@@ -93,6 +93,8 @@ header
         background-image: url('../images/fundo.jpg')
         margin: auto
         padding: 20px
+        padding-top: 5rem
+        height: 170%
         width: 90%
         color: #000
         img
@@ -121,12 +123,14 @@ header
     margin: 0 0.5rem
 
 .precoCarrinho
+    display: flex
+    flex-direction: column
     background-color: #fff
-    font-size: 0.5rem
+    font-size: 1rem
     text-align: center
     position: absolute
     top: 10rem
-    left: 4.5rem
+    
         
 .show 
     display: block !important
@@ -141,29 +145,51 @@ header
     margin-top: -2rem
     margin-bottom: 1rem
     text-align: center
-    
+
+.checkout 
+    background-image: url('../images/fundo.jpg')
+    min-height: 98vh
+    display: flex
+    align-items: center
 .brejasCheckout
     display: flex
     justify-content: space-evenly
     flex-direction: row
     flex-wrap: wrap
     padding-top: 1rem
-    background-image: url('../images/fundo.jpg')
-    min-height: 98vh
-    img
-        width: 40%
-        height: 50%
-        margin-top: 2%
-        margin-left: auto
-        margin-right: auto
+        
 
 .brejaCheckout
     display: flex
-    width: 80%
-    height: 5rem
+    justify-content: space-between
+    align-items: center
+    width: 52%
+    height: 6rem
     margin-bottom: 1rem
     background-color: #F6C101
     border-radius: 1rem 
     img
         height: 5rem
         width: 5rem
+    .name,
+    .qtd,
+    .totalPrice,
+    .individualPrice
+        height: 100%
+        width: 22%
+        margin-top: 0rem
+        margin-bottom: 0rem
+        text-align: center
+        display: flex
+        justify-content: center
+        align-items: center
+
+.precoCheckout
+    font-size: 0.5rem
+    text-align: center
+
+.purchaseButton
+    height: 100%
+    width: 8.1%
+    border-radius: 1rem 
+    

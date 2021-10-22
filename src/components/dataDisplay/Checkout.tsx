@@ -12,6 +12,8 @@ const Checkout = () => {
     const dispatch = useDispatch()
     const history = useHistory();
 
+    let qtdOfItems = 0;
+
     const handleFinishPurchase = () => {
         const emptyCart:any = []
         dispatch(atualizarTotals(0))
@@ -20,20 +22,25 @@ const Checkout = () => {
     }
     return (
         <>
-            {beersCatalog.length !== 0 ? 
-                <div className = 'precoCarrinho'>
-                    <h1>Total Price of the cart: ${totalStock}</h1>
-                    <button onClick = {handleFinishPurchase}>Finish Purchase</button>
+            <div className = 'checkout'>
+                <div className = 'brejasCheckout'>
+                {beersCatalog.length !== 0 ?
+                        beersCatalog.map((beer:any) => {
+                            qtdOfItems += beer.qtd
+                            return (
+                                        <CheckouItem key={beer.id} beer = {beer} />
+                            )
+                        }) : <h1 className = 'noItems'>There are no Items in the Cart</h1>} 
+                    <div key = {0} className = 'brejaCheckout'>
+                        <button onClick = {handleFinishPurchase}
+                        className = 'purchaseButton'>Finish Purchase</button>
+                        <div className = 'name'><h2></h2></div>
+                        <span className = 'individualPrice'></span>
+                        <span className = 'qtd'>Quantity of Items: {qtdOfItems}</span>
+                        <span className = 'totalPrice'>Final Price: ${totalStock}</span>
+                    </div>
                 </div>
-                 : null }
-            <div className = 'brejasCheckout'>
-            {beersCatalog.length !== 0 ?
-                    beersCatalog.map((beer:any) => {
-                        return (
-                                    <CheckouItem key={beer.id} beer = {beer} />
-                        )
-                    }) : <h1 className = 'noItems'>There are no Items in the Cart</h1>} 
-            </div>    
+            </div>
         </>
     )
 }

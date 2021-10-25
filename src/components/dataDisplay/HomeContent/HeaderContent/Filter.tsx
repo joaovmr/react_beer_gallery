@@ -1,6 +1,6 @@
-import { IFilterProps } from "../dataBuild/Interfaces"
+import { IFilterProps } from '../../../dataBuild/HeaderInterfaces'
 
-const Filter = ({textoInput, setTextoInput,checkedButton, setCheckedButton}: IFilterProps)=> {
+const Filter = ({textoInput, setTextoInput, setCheckedButton}: IFilterProps)=> {
 
 
     return(

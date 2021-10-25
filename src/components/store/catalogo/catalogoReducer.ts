@@ -1,5 +1,5 @@
 import { ATUALIZAR_BEER } from './catalogoActions';
-import { IBeerProps } from "../../dataBuild/Interfaces";
+import { IBeerProps } from "../../dataBuild/BeersInterfaces";
 
 
 const INITIAL_STATE: IInitalState = {

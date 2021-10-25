@@ -1,5 +1,4 @@
-import '../../../style/style.css'
-import { ICardProps } from '../../dataBuild/Interfaces'
+import { ICardProps } from '../../dataBuild/CardInterfaces'
 import AddToCart from './CardComponents/AddToCart';
 import Bottom from './CardComponents/Bottom';
 import Middle from './CardComponents/Middle';

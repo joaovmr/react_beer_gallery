@@ -1,4 +1,4 @@
-import { ITopProps } from "../../../dataBuild/Interfaces"
+import { ITopProps } from "../../../dataBuild/CardInterfaces"
   
 const Top = ({name}:ITopProps) => {
   return (

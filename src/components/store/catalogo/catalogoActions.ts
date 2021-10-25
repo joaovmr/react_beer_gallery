@@ -1,4 +1,4 @@
-import { IBeerProps } from "../../dataBuild/Interfaces";
+import { IBeerProps } from "../../dataBuild/BeersInterfaces";
 
 export const ATUALIZAR_BEER = 'catalogo/ATUALIZAR_BEER';
 

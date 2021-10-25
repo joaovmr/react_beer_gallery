@@ -1,7 +1,7 @@
 import React,{useState} from 'react';
-import Beers from './Beers';
-import Header from './Header';
-
+import Beers from './HomeContent/Beers';
+import Header from './HomeContent/Header';
+import '../../style/home.css'
 
 const Home = () => {
     const [textoInput, setTextoInput] = useState('');

@@ -1,15 +1,15 @@
 import React, { useState } from 'react';
 import { FaShoppingCart } from 'react-icons/fa';
-import Modal from './Modal';
-import Filter from './Filter';
-import { IHeaderProps } from '../dataBuild/Interfaces';
-import { useFetch } from '../dataFetch/useFetch';
-import { useDataCleaner } from '../dataTreatment/useDataCleaner';
+import Modal from './HeaderContent/Modal';
+import Filter from './HeaderContent/Filter';
+import { IHeaderProps } from '../../dataBuild/HeaderInterfaces';
+import { useFetch } from '../../dataFetch/useFetch';
+import { useDataCleaner } from '../../dataTreatment/useDataCleaner';
 
 const url = 'https://api.punkapi.com/v2/beers'
 
 const Header = ({textoInput, 
-  setTextoInput, checkedButton, setCheckedButton} : IHeaderProps) => {
+  setTextoInput,  setCheckedButton} : IHeaderProps) => {
     
     const [isModalVisible, setIsModalVisible] = useState(false);
     const { loading,beers }:any = useFetch(url)
@@ -25,7 +25,6 @@ const Header = ({textoInput,
         <h1>Beers</h1>
         <Filter textoInput = {textoInput} 
             setTextoInput = {setTextoInput}
-            checkedButton = {checkedButton}
             setCheckedButton = {setCheckedButton}/>
       <div id="total" className="total">Total Stock Price: ${total}</div>
       <button id="myBtn" className="myBtn" 

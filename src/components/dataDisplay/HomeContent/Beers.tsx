@@ -1,9 +1,8 @@
-import { useFetch } from '../dataFetch/useFetch';
-import { useDataCleaner } from '../dataTreatment/useDataCleaner';
-import { useDataFilters } from '../dataTreatment/useDataFilters';
-import Card from './Beer/Card'
-import {IBeersProps} from '../dataBuild/Interfaces'
-import '../../style/style.css'
+import { useFetch } from '../../dataFetch/useFetch';
+import { useDataCleaner } from '../../dataTreatment/useDataCleaner';
+import { useDataFilters } from '../../dataTreatment/useDataFilters';
+import Card from '../Beer/Card'
+import {IBeersProps} from '../../dataBuild/BeersInterfaces'
 
 const url = 'https://api.punkapi.com/v2/beers'
 const Beers = ({textoInput, checkedButton}:IBeersProps) => {

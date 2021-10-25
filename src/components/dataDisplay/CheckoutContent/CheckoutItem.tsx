@@ -1,7 +1,7 @@
 
 
 
-const CheckouItem = ({beer}:any) => {
+const CheckoutItem = ({beer}:any) => {
     return(
         <div key = {beer.id} className = 'brejaCheckout'>
             <span><img src = {beer?.image_url}></img></span>
@@ -13,6 +13,6 @@ const CheckouItem = ({beer}:any) => {
     )
 }
 
-export default CheckouItem
+export default CheckoutItem
 
 // id name image_url food_pairing tagline ph ibu qtd

@@ -1,6 +1,6 @@
-import Card from "./Beer/Card";
+import Card from "../../Beer/Card";
 import { connect } from 'react-redux';
-import { TReducers } from "../store/reducers";
+import { TReducers } from "../../../store/reducers";
 import { useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 

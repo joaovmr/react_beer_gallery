@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { IMiddleProps } from '../../../dataBuild/Interfaces'
+import { IMiddleProps } from '../../../dataBuild/CardInterfaces'
 import { atualizarBeers } from '../../../store/catalogo/catalogoActions'
 import { TReducers } from '../../../store/reducers'
 import AddItem from './AddItem'

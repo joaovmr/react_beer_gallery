@@ -1,4 +1,4 @@
-import { IBottomProps } from "../../../dataBuild/Interfaces";
+import { IBottomProps } from "../../../dataBuild/CardInterfaces";
 
 
 const Bottom = ({tagline,ph,ibu}:IBottomProps) => {

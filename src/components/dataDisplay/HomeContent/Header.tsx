@@ -6,6 +6,7 @@ import { IHeaderProps } from '../../dataBuild/HeaderInterfaces';
 import { useFetch } from '../../dataFetch/useFetch';
 import { useDataCleaner } from '../../dataTreatment/useDataCleaner';
 import { IBeerProps } from '../../dataBuild/BeersInterfaces';
+import { HeaderStyle, Total, CartButton } from '../../../style/HomeStyle/HeaderStyle/Header';
 
 const url = 'https://api.punkapi.com/v2/beers'
 
@@ -22,14 +23,14 @@ const Header = ({textoInput,
       });
     }
     return (
-    <header className = 'header'>
+    <HeaderStyle>
         <h1>Beers</h1>
         <Filter textoInput = {textoInput} 
             setTextoInput = {setTextoInput}
             setCheckedButton = {setCheckedButton}/>
-      <div id="total" className="total">Total Stock Price: ${total}</div>
-      <button id="myBtn" className="myBtn" 
-      onClick = {() => setIsModalVisible(true)}><FaShoppingCart/></button>
+      <Total>Total Stock Price: ${total}</Total>
+      <CartButton className="myBtn" 
+      onClick = {() => setIsModalVisible(true)}><FaShoppingCart/></CartButton>
 
       {isModalVisible ? 
         (<Modal 
@@ -38,7 +39,7 @@ const Header = ({textoInput,
         >
         </Modal>)
          : null}
-    </header>
+    </HeaderStyle>
     )
 }
 

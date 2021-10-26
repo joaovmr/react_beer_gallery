@@ -6,3 +6,7 @@ export interface ICheckoutItem {
     ibu:number
     qtd:number
 }
+
+export interface IPurchaseItemProps{
+    qtdOfItems:number
+}

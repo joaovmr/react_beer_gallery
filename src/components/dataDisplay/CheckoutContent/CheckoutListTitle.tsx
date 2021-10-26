@@ -1,10 +1,11 @@
+import { Title } from "../../../style/CheckoutStyle/CheckoutListTitle"
 
 
 const CheckoutListTitle = () =>  {
     return (
-        <div className = 'checkoutTitle'>
+        <Title>
             <h1>Your Items</h1>
-        </div>
+        </Title>
     )
 }
 

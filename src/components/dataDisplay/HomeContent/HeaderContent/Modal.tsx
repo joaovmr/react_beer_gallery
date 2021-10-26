@@ -4,6 +4,7 @@ import { TReducers } from "../../../store/reducers";
 import { useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import { IBeerProps } from "../../../dataBuild/BeersInterfaces";
+import { CartPrice, ModalContent, ModalVisual, NoItems } from "../../../../style/HomeStyle/HeaderStyle/HeaderComponents/Modal";
 
 
 const mapStateToProps = (state: TReducers) => {
@@ -21,13 +22,13 @@ const Modal = ({onClose = () => {}}:any) => {
     const beersCatalog = useSelector((state: TReducers) => state.catalogo.beers);
 
     return(
-        <div id = 'modal' className = "modal" onClick = {handleOutsideClick}>
-            <div className = "container"> 
+        <ModalVisual id = 'modal'onClick = {handleOutsideClick}>
+            <ModalContent> 
                 {beersCatalog.length !== 0 ? 
-                <div className = 'precoCarrinho'>
+                <CartPrice>
                     <h1>Total Price of the cart: ${totalStock}</h1>
                     <button onClick={()=> history.push("/checkout")}>Buy</button>
-                </div>
+                </CartPrice>
                  : null }
                 {beersCatalog.length !== 0 ?
                 beersCatalog.map((beer:IBeerProps) => {
@@ -36,9 +37,9 @@ const Modal = ({onClose = () => {}}:any) => {
                             <Card key={beer.id} beer = {beer} isInicial = {false} isModal = {true}/>
                         </>
                       )
-                }) : <h1 className = 'noItems'>There are no Items in the Cart</h1>}  
-            </div>
-        </div>
+                }) : <NoItems>There are no Items in the Cart</NoItems>}  
+            </ModalContent>
+        </ModalVisual>
     )
 }
 

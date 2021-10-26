@@ -1,10 +1,11 @@
+import { BeerTop } from "../../../../style/HomeStyle/BeersStyle/BeerComponents/Top"
 import { ITopProps } from "../../../dataBuild/CardInterfaces"
   
 const Top = ({name}:ITopProps) => {
   return (
-  <div className = 'colarinho'>
+  <BeerTop>
       <h1>{String(name)}</h1>
-  </div>
+  </BeerTop>
   )
 }
 

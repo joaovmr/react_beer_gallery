@@ -1,3 +1,4 @@
+import { Beer } from '../../../style/HomeStyle/BeersStyle/Beer';
 import { ICardProps } from '../../dataBuild/CardInterfaces'
 import AddToCart from './CardComponents/AddToCart';
 import Bottom from './CardComponents/Bottom';
@@ -9,13 +10,13 @@ import Top from './CardComponents/Top';
 const Card = ({ beer , isInicial = true, isModal = false}:ICardProps) => {
 
   return (
-    <div key={beer.id} className = 'breja'>
+    <Beer key={beer.id}>
         {isInicial ? <AddToCart {...beer}></AddToCart> : null}
         <Top {...beer}></Top>
         <img src = {beer?.image_url}></img>
         <Middle {...beer} isModal = {isModal}></Middle>
         <Bottom {...beer}></Bottom>
-    </div>
+    </Beer>
   );
 };
 

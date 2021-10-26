@@ -1,5 +1,6 @@
 
 import { useDispatch } from "react-redux"
+import { AddButton } from "../../../../style/HomeStyle/BeersStyle/BeerComponents/AddItem"
 import { IItemManipulationProps } from "../../../dataBuild/CardInterfaces"
 import { atualizarTotals } from "../../../store/total/totalActions"
 
@@ -14,9 +15,9 @@ const AddItem = ({value,setValue,ibu,selected,totalStock}:IItemManipulationProps
         setValue(value + 1);
     }
     return (
-        <button className = 'btnItem' onClick = {handleClick}>
+        <AddButton onClick = {handleClick}>
             +
-        </button>
+        </AddButton>
     )
 }
 

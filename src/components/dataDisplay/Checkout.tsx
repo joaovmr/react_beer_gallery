@@ -1,10 +1,10 @@
 import { TReducers } from "../store/reducers";
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import CheckoutItem from "./CheckoutContent/CheckoutItem";
 import PurchaseItem from "./CheckoutContent/PurchaseItem";
 import CheckoutListTitle from "./CheckoutContent/CheckoutListTitle";
-import '../../style/checkout.css'
 import { IBeerProps } from "../dataBuild/BeersInterfaces";
+import { CheckoutBox } from '../../style/CheckoutStyle/Checkout'
 
 let qtdOfItems = 0;
 const Checkout = () => { 
@@ -14,8 +14,8 @@ const Checkout = () => {
     
     return (
         <>
-            <div className = 'checkout'>
-                <div className = 'brejasCheckout'>
+            <CheckoutBox>
+                <div>
                 <CheckoutListTitle></CheckoutListTitle>
                 {beersCatalog.length !== 0 ?
                     beersCatalog.map((beer:IBeerProps) => {
@@ -23,10 +23,10 @@ const Checkout = () => {
                         return (
                             <CheckoutItem key={beer.id} {...beer} />
                         )
-                    }) : <h1 className = 'noItems'>There are no Items in the Cart</h1>}
+                    }) : <h1>There are no Items in the Cart</h1>}
                 <PurchaseItem qtdOfItems = {qtdOfItems}></PurchaseItem>  
                 </div>
-            </div>
+            </CheckoutBox>
             {qtdOfItems = 0}  
         </>
     )

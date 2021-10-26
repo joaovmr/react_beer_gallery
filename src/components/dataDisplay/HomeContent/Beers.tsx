@@ -3,6 +3,7 @@ import { useDataCleaner } from '../../dataTreatment/useDataCleaner';
 import { useDataFilters } from '../../dataTreatment/useDataFilters';
 import Card from '../Beer/Card'
 import {IBeersProps} from '../../dataBuild/BeersInterfaces'
+import { BeersVisual } from '../../../style/HomeStyle/BeersStyle/Beers';
 
 const url = 'https://api.punkapi.com/v2/beers'
 const Beers = ({textoInput, checkedButton}:IBeersProps) => {
@@ -15,43 +16,43 @@ const Beers = ({textoInput, checkedButton}:IBeersProps) => {
       case 'acid':
         return (
           <div>
-            <section className='brejas'>
+            <BeersVisual>
               <Card key={maisAcida.id} beer = {maisAcida} />
-            </section> 
+            </BeersVisual> 
           </div>
         )
         
       case 'lessAcid':
         return (
           <div>
-            <section className='brejas'>
+            <BeersVisual>
               <Card key={menosAcida.id} beer = {menosAcida} />
-            </section> 
+            </BeersVisual> 
           </div>
         )
       
       case 'expensive':
         return (
           <div>
-            <section className='brejas'>
+            <BeersVisual>
               <Card key={maisCara.id} beer = {maisCara} />
-            </section> 
+            </BeersVisual> 
           </div>
         )
       
       case 'cheap':
         return (
           <div>
-            <section className='brejas'>
+            <BeersVisual>
               <Card key={menosCara.id} beer = {menosCara} />
-            </section> 
+            </BeersVisual> 
           </div>
         )
     
       default: 
       return (
         <div>
-          <section className='brejas'>
+          <BeersVisual>
             {cleanedBeers
             .filter((beer:object) => {
     
@@ -65,7 +66,7 @@ const Beers = ({textoInput, checkedButton}:IBeersProps) => {
             .map((beer:any) => {
               return <Card key={beer.id} beer = {beer} />
             })} 
-          </section>
+          </BeersVisual>
         </div>
       )   
     }

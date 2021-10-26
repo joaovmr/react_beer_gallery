@@ -1,6 +1,8 @@
+import { Dispatch, SetStateAction } from "react";
+import { IBeerProps } from "./BeersInterfaces";
 
 export interface ICardProps {
-  beer:any
+  beer:IBeerProps
   isInicial?:boolean
   isModal?:boolean
 } 
@@ -20,4 +22,12 @@ export interface IBottomProps{
 
 export interface ITopProps{
   name:string
+}
+
+export interface IItemManipulationProps{
+  value:number
+  setValue: Dispatch<SetStateAction<number>>
+  ibu:number
+  selected: IBeerProps
+  totalStock: number
 }

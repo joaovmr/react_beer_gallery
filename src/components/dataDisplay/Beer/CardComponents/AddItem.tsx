@@ -1,8 +1,9 @@
 
 import { useDispatch } from "react-redux"
+import { IItemManipulationProps } from "../../../dataBuild/CardInterfaces"
 import { atualizarTotals } from "../../../store/total/totalActions"
 
-const AddItem = ({value,setValue,ibu,selected,totalStock}:any) =>{
+const AddItem = ({value,setValue,ibu,selected,totalStock}:IItemManipulationProps) =>{
 
     const dispatch = useDispatch()
     const handleClick = () => {

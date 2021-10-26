@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { TReducers } from "../../../store/reducers";
 import { useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
+import { IBeerProps } from "../../../dataBuild/BeersInterfaces";
 
 
 const mapStateToProps = (state: TReducers) => {
@@ -29,7 +30,7 @@ const Modal = ({onClose = () => {}}:any) => {
                 </div>
                  : null }
                 {beersCatalog.length !== 0 ?
-                beersCatalog.map((beer:any) => {
+                beersCatalog.map((beer:IBeerProps) => {
                       return (
                         <>
                             <Card key={beer.id} beer = {beer} isInicial = {false} isModal = {true}/>

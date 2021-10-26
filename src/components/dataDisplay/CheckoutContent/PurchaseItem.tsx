@@ -1,5 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router";
+import { IBeerProps } from "../../dataBuild/BeersInterfaces";
 import { atualizarBeers } from "../../store/catalogo/catalogoActions";
 import { TReducers } from "../../store/reducers";
 import { atualizarTotals } from "../../store/total/totalActions";
@@ -11,7 +12,7 @@ const PurchaseItem = ({qtdOfItems}:any) => {
     const history = useHistory();
 
     const handleFinishPurchase = () => {
-        const emptyCart:any = []
+        const emptyCart: IBeerProps[] = []
         dispatch(atualizarTotals(0))
         dispatch(atualizarBeers(emptyCart))
         history.push("/")
@@ -19,7 +20,7 @@ const PurchaseItem = ({qtdOfItems}:any) => {
     return(
     <div key = {0} className = 'brejaCheckout'>
         <button onClick = {handleFinishPurchase}
-        className = 'purchaseButton'>Finish Purchase</button>
+            className = 'purchaseButton'>Finish Purchase</button>
         <div className = 'name'><h2></h2></div>
         <span className = 'individualPrice'></span>
         <span className = 'qtd'>Quantity of Items: {qtdOfItems}</span>

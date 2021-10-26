@@ -1,12 +1,14 @@
+import { Dispatch, SetStateAction } from "react";
+
 export interface IFilterProps {
     textoInput:string;
-    setTextoInput: any;
-    setCheckedButton:any
+    setTextoInput: Dispatch<SetStateAction<string>>;
+    setCheckedButton:Dispatch<SetStateAction<string>>
 }
 
 export interface IHeaderProps {
     textoInput:string;
-    setTextoInput: any;
+    setTextoInput: Dispatch<SetStateAction<string>>;
     checkedButton: string;
-    setCheckedButton:any
+    setCheckedButton:Dispatch<SetStateAction<string>>
 }

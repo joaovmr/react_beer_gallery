@@ -1,7 +1,7 @@
 export interface IBeerProps{
     id:number
     name:string
-    image_url:any
+    image_url:string
     food_pairing:string
     tagline:string
     ph:number

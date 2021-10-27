@@ -9,7 +9,7 @@ import Top from './CardComponents/Top';
 const Card = ({ beer , isInicial = true, isModal = false}:ICardProps) => {
   const[isActive, setIsActive] = useState(false)
   return (
-    <Beer isActive = {isActive}>
+    <Beer isActive = {isActive} isInicial = {isInicial}>
         {isInicial ? <AddToCart {...beer} 
         isActive = {isActive} 
         setIsActive = {setIsActive}

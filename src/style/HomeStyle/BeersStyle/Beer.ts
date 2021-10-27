@@ -36,7 +36,7 @@ export const Beer = styled.div<BeerProps>`
     background-color: #F6C101;
     border-bottom-left-radius: 3rem;
     border-bottom-right-radius: 3rem;
-    animation: ${props => props.isActive ? fadeOut : fadeIn} 0.7s linear;
+    animation: ${props => props.isActive && props.isInicial ? fadeOut : null} 0.7s linear;
     transition: visibility 1s linear;
 `;
 

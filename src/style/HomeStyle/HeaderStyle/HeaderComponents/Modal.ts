@@ -21,14 +21,14 @@ export const ModalContent = styled.div`
     background-image: url('${img}');
     margin: auto;
     padding: 20px;
-    padding-top: 5rem;
+    padding-top: 8rem;
     height: 170%;
     width: 90%;
     color: #000;
 
     img{
         width: 40%;
-        height: 50%;
+        height: 40%;
         margin-top: 2%;
         margin-left: auto;
         margin-right: auto;

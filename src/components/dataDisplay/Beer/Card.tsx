@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Beer } from '../../../style/HomeStyle/BeersStyle/Beer';
 import { ICardProps } from '../../dataBuild/CardInterfaces'
 import AddToCart from './CardComponents/AddToCart';
@@ -5,13 +6,14 @@ import Bottom from './CardComponents/Bottom';
 import Middle from './CardComponents/Middle';
 import Top from './CardComponents/Top';
 
-
-
 const Card = ({ beer , isInicial = true, isModal = false}:ICardProps) => {
-
+  const[isActive, setIsActive] = useState(false)
   return (
-    <Beer key={beer.id}>
-        {isInicial ? <AddToCart {...beer}></AddToCart> : null}
+    <Beer isActive = {isActive}>
+        {isInicial ? <AddToCart {...beer} 
+        isActive = {isActive} 
+        setIsActive = {setIsActive}
+        ></AddToCart> : null}
         <Top {...beer}></Top>
         <img src = {beer?.image_url}></img>
         <Middle {...beer} isModal = {isModal}></Middle>

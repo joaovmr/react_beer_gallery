@@ -2,6 +2,7 @@ import {useState} from 'react';
 import Beers from './HomeContent/Beers';
 import Header from './HomeContent/Header';
 
+
 const Home = () => {
     const [textoInput, setTextoInput] = useState('');
     const [checkedButton,setCheckedButton] = useState('')

@@ -8,11 +8,11 @@ export const FoodPairing = styled.span`
     ul{
         position: relative;
         top: 10%;
+        list-style-type: none;
+        padding:0;
     }
 `;
 export const Quantity = styled.p`
-    margin-top: -2rem;
-    margin-bottom: 1rem;
     text-align: center;
 `;
 export const ButtonsBox = styled.div`

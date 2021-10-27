@@ -31,3 +31,15 @@ export interface IItemManipulationProps{
   selected: IBeerProps
   totalStock: number
 }
+
+export interface IAddToCartProps {
+  id:number
+  name:string
+  image_url:string
+  food_pairing:string
+  tagline:string
+  ph:number
+  ibu:number
+  isActive:boolean
+  setIsActive:Dispatch<SetStateAction<boolean>>
+}
